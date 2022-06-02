@@ -1,6 +1,4 @@
-import NavBar from './components/NavBar'
 import QuestionList from './components/QuestionList'
-import Question from './components/Question'
 import { useState } from 'react'
 
 
@@ -22,9 +20,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <h1>RanDOM Questions</h1>
       {questions.map((QuestionList))}
-      <QuestionList title={QuestionList.title} body={QuestionList.body} />
+      <QuestionList 
+      title={QuestionList.title} 
+      body={QuestionList.body} 
+      created_at={QuestionList.created_at}
+       />
     </div>
   );
 }

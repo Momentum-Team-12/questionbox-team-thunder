@@ -3,7 +3,9 @@ import React from 'react'
 const QuestionList = (props) => {
     return (
         <>
-        <h1>{props.title}</h1>
+        <h3>{props.title}</h3>
+        <p>{props.body}</p>
+        <h5>Posted:{props.created_at}</h5>
         </>
     )
 }
