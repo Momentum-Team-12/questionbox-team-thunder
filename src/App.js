@@ -1,4 +1,4 @@
-import QuestionList from './components/QuestionList'
+import Question from './components/Question'
 import { useState } from 'react'
 
 
@@ -7,13 +7,13 @@ function App() {
     {
       pk: 1,
       title: 'What is NC state bird?',
-      body: 'I think its a cardinal, can anyone confirm?',
+      description: 'I think its a cardinal, can anyone confirm?',
       created_at:'June 1, 2022'
     },
     {
       pk: 1,
       title: 'What genre of music is the Rolling Stones?',
-      body: 'I must know.',
+      description: 'I must know.',
       created_at:'June 2, 2022'
     },
   ])
@@ -21,12 +21,13 @@ function App() {
   return (
     <div className="App">
       <h1>RanDOM Questions</h1>
-      {questions.map((QuestionList))}
-      <QuestionList 
-      title={QuestionList.title} 
-      body={QuestionList.body} 
-      created_at={QuestionList.created_at}
+      {questions.map((question) => (
+      <Question 
+      title={question.title} 
+      description={question.description} 
+      created_at={question.created_at}
        />
+      ))}
     </div>
   );
 }
