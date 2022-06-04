@@ -1,5 +1,6 @@
-import React from 'react'
-import QuestionList from "../components/QuestionList"
+import React from 'react';
+import QuestionList from "../components/QuestionList";
+import Navbar from '../components/Navbar';
 
 function Homepage (){
     const questiondummy =
@@ -18,8 +19,9 @@ function Homepage (){
 
 return (
 
+    
     <QuestionList questions={questiondummy} />
-
+    
 )
 }
 

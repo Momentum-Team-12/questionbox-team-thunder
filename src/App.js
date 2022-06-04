@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import Question from './components/Question'
-import QuestionList from './components/QuestionList'
-import Homepage from './pages/Homepage'
-import { useState } from 'react'
+import Homepage from './pages/Homepage';
+import Layout from './components/Layout';
+
 
 
 function App() {
@@ -10,9 +9,11 @@ function App() {
 
 
   return (
+  <Layout>
   <Routes>
     <Route path='/' element={<Homepage />}/>
   </Routes>
+  </Layout>
   
   )
   

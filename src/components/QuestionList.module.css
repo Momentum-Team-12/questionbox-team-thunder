@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    font-size: 1rem;
+    text-decoration: underline;
+    letter-spacing: .1rem;
+}

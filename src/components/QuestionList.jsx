@@ -1,13 +1,14 @@
 import Question from './Question'
 import { useState } from 'react'
+import classes from './QuestionList.module.css'
 
 function QuestionList(props) {
     const [questions, setQuestions] = useState([])
 
 
 return (
-    <div className="App">
-      <h1>RanDOM Questions</h1>
+    <div className={classes.list}>
+      <h2 className={classes.header}>All Questions</h2>
       {props.questions.map((question) => (
       <Question 
       title={question.title} 
