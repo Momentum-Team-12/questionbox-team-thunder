@@ -1,23 +1,35 @@
-import Question from './Question'
-import { useState } from 'react'
-import classes from './QuestionList.module.css'
+import Question from "./Question";
+import { useEffect, useState } from "react";
+import classes from "./QuestionList.module.css";
+import axios from "axios";
 
 function QuestionList(props) {
-    const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get(
+        "https://questionbox-team-thunder-api.herokuapp.com/api/questions/?format=json"
+      )
+      .then((res) => {
+        console.log(res);
+        setQuestions(res.data);
+      });
+  },[]);
 
-return (
+  return (
     <div className={classes.list}>
       <h2 className={classes.header}>All Questions</h2>
-      {props.questions.map((question) => (
-      <Question 
-      title={question.title} 
-      description={question.description} 
-      created_at={question.created_at}
-       />
+      {questions && questions.map((question) => (
+        <Question
+          title={question.title}
+          author={question.author}
+          created_at={question.created_at}
+          key={question.id}
+        />
       ))}
     </div>
   );
 }
 
-  export default QuestionList;
+export default QuestionList;

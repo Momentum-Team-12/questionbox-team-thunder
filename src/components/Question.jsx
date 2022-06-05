@@ -4,7 +4,7 @@ const Question = (props) => {
     return (
         <>
         <h4>{props.title}</h4>
-        <p>{props.description}</p>
+        <p>{props.author}</p>
         <h5>Posted: {props.created_at}</h5>
         </>
     )
