@@ -6,8 +6,8 @@ const Answer = (props) => {
 
   return (
     <>
-      <p>{props.body}</p>
-
+      <p>{props.description}</p>
+      <p>{props.author}</p>
       <p>{props.created_at}</p>
     </>
   );
