@@ -9,7 +9,7 @@ function QuestionList(props) {
   useEffect(() => {
     axios
       .get(
-        "https://questionbox-team-thunder-api.herokuapp.com/api/questions/?format=json"
+        "https://questionbox-team-thunder-api.herokuapp.com/api/all_questions/?format=json"
       )
       .then((res) => {
         console.log(res);

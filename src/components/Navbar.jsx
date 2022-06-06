@@ -4,11 +4,17 @@ import classes from './Navbar.module.css';
 function Navbar(){
     return (
         <header className={classes.header}>
-            <div>RanDOM Thunder</div>
+            <div className={classes.logo}>RanDOM Thunder</div>
                 <nav>
                     <ul>
                         <li>
                             <Link to='/'>Homepage</Link>
+                        </li>
+                        <li>
+                            <Link to='/login'>Login</Link>
+                        </li>
+                        <li>
+                            <Link to='/ask'>Ask</Link>
                         </li>
                     </ul>
                 </nav>
