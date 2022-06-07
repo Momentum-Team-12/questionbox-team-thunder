@@ -21,7 +21,6 @@ function AnswerInput(props) {
     <form className="form" onSubmit={submitHandler}>
       <div className="control">
         <label htmlFor="title">Question Title </label>
-        {/* <input type="text" required id="title" ref={titleInputRef} /> */}
       </div>
       <div className="control">
         <label htmlFor="answer">Answer Description </label>
