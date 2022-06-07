@@ -23,6 +23,7 @@ function QuestionList(props) {
       <h2 className={classes.header}>All Questions</h2>
       {questions && questions.map((question) => (
         <Question
+          id={question.id}
           title={question.title}
           author={question.author}
           created_at={question.created_at}
