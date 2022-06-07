@@ -30,7 +30,6 @@ function App() {
   <Routes>
     <Route path='/' element={<Homepage />}/>
     <Route path='/ask' element={<Ask />}/>
-    <Route path='/questions/:questionPk' element={<QuestionDetail token={token} />}/>
     <Route path='/login' element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}/>
   </Routes>
   </Layout>
