@@ -1,21 +1,40 @@
-import { Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import Layout from "./components/Layout";
+import useLocalStorageState from 'use-local-storage-state'
+import Login from './pages/Login';
+import { Route, Routes } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Ask from './pages/Ask';
+import Layout from './components/Layout';
 import Question from "./components/Question";
-import Ask from "./pages/Ask";
 
 function App() {
+  const [token, setToken] =  ('reactLibraryToken', '')
+  const [username, setUsername] = useLocalStorageState(
+  'reactLibraryUsername',
+  ''
+)
+  const setAuth = (username,token) => {
+    setToken(token)
+    setUsername(username)
+  }
+
+  const isLoggedIn = username && token
+
+  const handleLogout = () => {
+    setAuth('','')
+  }
+
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/ask" element={<Ask />} />
-        <Route path="/QandA" element={<Question />} />
-        {/* <Route path='/QandA' element={<Answer />}/>
-    <Route path='/QandA' element={<AnswerInput />}/> */}
-      </Routes>
-    </Layout>
+  <Layout>
+  <Routes>
+    <Route path='/' element={<Homepage />}/>
+    <Route path='/ask' element={<Ask />}/>
+    <Route path='/login' element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}/>
+    <Route path="/QandA" element={<Question />} />
+  </Routes>
+  </Layout>
+  
   );
+
 }
 
 export default App;
