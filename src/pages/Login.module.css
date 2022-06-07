@@ -21,7 +21,6 @@
     width: 100%;
 }
 
-
 .actions {
     margin-top: 1rem;
     text-align: right;
@@ -43,3 +42,15 @@
     background-color: rgb(222, 107, 65);
     border-color: rgb(18, 27, 40);
 }
+
+ul {
+    list-style: none;
+    margin: 0;
+    margin-top: .5rem;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: right;
+   
+}
+

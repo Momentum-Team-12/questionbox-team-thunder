@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Login.module.css';
 
 function Login (props) {
@@ -31,7 +32,12 @@ return(
          <div className={classes.actions}>
              <button>Submit</button>
          </div>
-     </form>
+     <ul>
+        <li>
+        <Link to='/register'>Register</Link>
+        </li>
+    </ul>
+    </form>
     )
 }
 
