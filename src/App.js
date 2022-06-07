@@ -4,9 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Ask from './pages/Ask';
 import Layout from './components/Layout';
-
-
-
+import Question from "./components/Question";
 
 function App() {
   const [token, setToken] =  ('reactLibraryToken', '')
@@ -31,11 +29,12 @@ function App() {
     <Route path='/' element={<Homepage />}/>
     <Route path='/ask' element={<Ask />}/>
     <Route path='/login' element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}/>
+    <Route path="/QandA" element={<Question />} />
   </Routes>
   </Layout>
   
-  )
-  
+  );
+
 }
 
 export default App;

@@ -13,7 +13,7 @@ const Navbar = ({ handleLogout, isLoggedIn}) => {
                         </li>
                         {!isLoggedIn ? (
                         <li>
-                            <Link to='/login'>Login/Register</Link>
+                            <Link to='/login'>Login/Sign up</Link>
                         </li>
                         ) : (
                             <Link to='/' onClick={handleLogout}>Logout</Link>
