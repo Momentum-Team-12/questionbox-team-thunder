@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "../pages/AskForm.module.css";
+import classes from './AnswerInput.module.css';
 
 function AnswerInput(props) {
   const titleInputRef = useRef();
@@ -17,17 +17,16 @@ function AnswerInput(props) {
     };
     props.onAddQuestion(answerData);
   }
+
+  
   return (
     <form className="form" onSubmit={submitHandler}>
-      <div className="control">
-        <label htmlFor="title">Question Title </label>
-      </div>
-      <div className="control">
-        <label htmlFor="answer">Answer Description </label>
+      <div className={classes.control}>
+        <label htmlFor="answer">Add an Answer </label>
         <textarea id="answer" required rows="6" ref={answerInputRef}></textarea>
       </div>
-      <div className="actions">
-        <button>Add Answer</button>
+      <div className={classes.actions}>
+        <button>Submit</button>
       </div>
     </form>
   );

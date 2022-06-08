@@ -25,7 +25,8 @@ function Register() {
       )
       .then((res) => {
         console.log(res);
-      });
+      })
+     
   }
 
   return (

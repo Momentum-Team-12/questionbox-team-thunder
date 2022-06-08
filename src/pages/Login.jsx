@@ -25,10 +25,7 @@ function Login (props) {
 
 return(
         <form onSubmit={submitHandler}>
- forms
         <h2>Login</h2>
-
-        
          <div className={classes.control}>
              <label htmlFor="username">Username </label>
              <input type="text" required id="username" ref={usernameInputRef} />
