@@ -20,22 +20,21 @@ function QandA() {
         console.log(res);
         setQuestion(res.data);
       });
- 
-
-  axios
-      .post(
-        `https://questionbox-team-thunder-api.herokuapp.com/api/answers/${id}`
-      )
-      .then((res) => {
+    
+    
+    axios
+    .post ('https://questionbox-team-thunder-api.herokuapp.com/api/answers/'
+    )
+    .then ((res) => {
         console.log(res);
-      })
-
-    }, []);
+    })
+}, []);
 
   return (
     <>
       {question && <Question {...question} />}
-      {answer && <Answer {...answer} />}
+      {question && question.answers.length > 0 && question.answers.map((answerId) => <Answer id={answerId} />)}
+      
     <AnswerInput />
     </>
   );
