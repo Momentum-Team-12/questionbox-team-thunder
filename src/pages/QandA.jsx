@@ -9,7 +9,6 @@ import AnswerInput from "../components/AnswerInput";
 function QandA() {
   let { id } = useParams();
   const [question, setQuestion] = useState(null);
-  const [answer, setAnswer] = useState(true);
 
   useEffect(() => {
     axios
@@ -20,21 +19,12 @@ function QandA() {
         console.log(res);
         setQuestion(res.data);
       });
-    
-    
-    axios
-    .post ('https://questionbox-team-thunder-api.herokuapp.com/api/answers/'
-    )
-    .then ((res) => {
-        console.log(res);
-    })
 }, []);
 
   return (
     <>
       {question && <Question {...question} />}
       {question && question.answers.length > 0 && question.answers.map((answerId) => <Answer id={answerId} />)}
-      
     <AnswerInput />
     </>
   );

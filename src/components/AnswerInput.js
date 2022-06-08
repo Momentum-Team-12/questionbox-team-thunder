@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import axios from 'axios'
 import classes from './AnswerInput.module.css';
 
 function AnswerInput(props) {
@@ -15,10 +16,15 @@ function AnswerInput(props) {
       title: enteredTitle,
       description: enteredAnswer,
     };
-    props.onAddQuestion(answerData);
+    axios
+      .post(
+        "https://questionbox-team-thunder-api.herokuapp.com/api/answers/", 
+        answerData 
+      )
+      .then((res) => {
+        console.log(res);
+      })
   }
-
-  
   return (
     <form className="form" onSubmit={submitHandler}>
       <div className={classes.control}>
