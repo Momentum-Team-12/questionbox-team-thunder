@@ -1,44 +1,37 @@
-import { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Login.module.css';
 
-function Login ({ setAuth, isLoggedIn }) {
-   const [username, setUsername] = useState('')
-   const [password, setPassword] = useState('')
-   const [error, setError] = useState('')
+function Login (props) {
+    const usernameInputRef = useRef();
+    const passwordInputRef = useRef();
 
-    const handleLogin = (event) => {
-        event.preventDefault()
-        setError('')
+    function submitHandler(event){
+        event.preventDefault();
 
-        axios.post('https://questionbox-team-thunder-api.herokuapp.com/api/auth/token/login/', {
-            username: username,
-            password: password,
-        })
-        .then((res) => {
-            setAuth(username, res.data.auth_token)
+        const enteredUsername = usernameInputRef.current.value;
+        const enteredPassword = passwordInputRef.current.value;
+
+        const loginData= {
+            username: enteredUsername,
+            password: enteredPassword,
         }
-        )
-        .catch((event) => setError(event.message))
-    }
-    if (isLoggedIn) {
-        return <Navigate to="/" replace={true} />
+        props.onAddLogin(loginData); 
     }
 
 return(
-        <form onSubmit={handleLogin}>
+        <form onSubmit={submitHandler}>
         <h2>Login</h2>
          <div className={classes.control}>
              <label htmlFor="username">Username </label>
-             <input type="text" required id="username" onChange={(event) => setUsername(event.target.value)} />
+             <input type="text" required id="username" ref={usernameInputRef} />
          </div>
          <div className={classes.control}>
              <label htmlFor="password">Password </label>
-             <input type="password" required id="password" onChange={(event) => setPassword(event.target.value)} />
+             <input type="password" required id="password" ref={passwordInputRef} />
          </div>
          <div className={classes.actions}>
-             <button>Login</button>
+             <button>Submit</button>
          </div>
      <ul>
         <li>
