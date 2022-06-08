@@ -1,19 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const Question = (props, questionId, setSelected) => {
-   
-    
-    const handleclick = () => {
-        setSelected(questionId)
-    }
+const Question = (props) => {
+
     return (
-        <>
-        <div onClick={handleclick}>
-        <Link to={`question/${questionId}`}>{props.title}</Link>
+        <div>
+        <Link to={`/question/${props.id}`}>{props.title}</Link>
         <p>Author: {props.author}</p>
         <h5>Posted: {props.created_at}</h5>
         </div>
-        </>
     )
 }
 

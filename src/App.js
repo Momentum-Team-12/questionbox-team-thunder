@@ -4,7 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Ask from './pages/Ask';
 import Layout from './components/Layout';
-import Question from "./components/Question";
+import QandA from "./pages/QandA";
+import Register from './pages/Register';
 
 function App() {
   const [token, setToken] =  ('reactLibraryToken', '')
@@ -29,7 +30,8 @@ function App() {
     <Route path='/' element={<Homepage />}/>
     <Route path='/ask' element={<Ask />}/>
     <Route path='/login' element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}/>
-    <Route path="/QandA" element={<Question />} />
+    <Route path="/question/:id" element={<QandA />} />
+    <Route path="/register" element={<Register />} />
   </Routes>
   </Layout>
   

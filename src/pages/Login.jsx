@@ -25,14 +25,17 @@ function Login (props) {
 
 return(
         <form onSubmit={submitHandler}>
-            <h2>Login</h2>
+ forms
+        <h2>Login</h2>
+
+        
          <div className={classes.control}>
              <label htmlFor="username">Username </label>
              <input type="text" required id="username" ref={usernameInputRef} />
          </div>
          <div className={classes.control}>
              <label htmlFor="password">Password </label>
-             <input type="text" required id="password" ref={passwordInputRef} />
+             <input type="password" required id="password" ref={passwordInputRef} />
          </div>
          <div className={classes.actions}>
              <button>Submit</button>

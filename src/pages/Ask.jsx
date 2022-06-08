@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import axios from 'axios';
 import classes from './AskForm.module.css';
 
-function Ask(props){
+function Ask(){
     const titleInputRef = useRef();
     const descriptionInputRef = useRef();
 
@@ -15,8 +16,18 @@ function Ask(props){
             title: enteredTitle,
             description: enteredDescription,
         };
-        props.onAddQuestion(questionData); 
+
+        axios
+        .post(
+          "https://questionbox-team-thunder-api.herokuapp.com/api/questions",
+          questionData
+        )
+        .then((res) => {
+          console.log(res);
+          
+        });
     }
+
  return(
      <form className={classes.form} onSubmit={submitHandler}>
          <div className={classes.control}>
