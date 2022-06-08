@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Ask from './pages/Ask';
 import Layout from './components/Layout';
 import QandA from "./pages/QandA";
+import Register from './pages/Register';
 
 function App() {
   const [token, setToken] =  ('reactLibraryToken', '')
@@ -30,6 +31,7 @@ function App() {
     <Route path='/ask' element={<Ask />}/>
     <Route path='/login' element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}/>
     <Route path="/question/:id" element={<QandA />} />
+    <Route path="/register" element={<Register />} />
   </Routes>
   </Layout>
   

@@ -21,6 +21,7 @@ function Login (props) {
 
 return(
         <form onSubmit={submitHandler}>
+        <h2>Login</h2>
          <div className={classes.control}>
              <label htmlFor="username">Username </label>
              <input type="text" required id="username" ref={usernameInputRef} />
@@ -34,7 +35,7 @@ return(
          </div>
      <ul>
         <li>
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>Sign Up</Link>
         </li>
     </ul>
     </form>
