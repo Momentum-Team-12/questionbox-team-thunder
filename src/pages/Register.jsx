@@ -37,7 +37,7 @@ function Register() {
       </div>
       <div className={classes.control}>
         <label htmlFor="password">Add Password </label>
-        <input type="text" required id="password" ref={passwordInputRef} />
+        <input type="password" required id="password" ref={passwordInputRef} />
       </div>
       <div className={classes.actions}>
         <button>Sign Up</button>
