@@ -1,13 +1,15 @@
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import classes from './Login.module.css';
 import axios from "axios";
 
 
 
-function Login (props) {
+function Login (setAuth, isLoggedIn) {
     const usernameInputRef = useRef();
     const passwordInputRef = useRef();
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [token, setToken] = useState("");
 
     function submitHandler(event){
         event.preventDefault();
@@ -25,15 +27,17 @@ function Login (props) {
           loginData
         )
         .then((res) => {
-          console.log(res);
+            setToken(loginData, res.data.auth_token)  
         });  
-
+        
         
     }
 
 return(
+    loggedIn ? <Navigate to="/" /> :
+
         <form onSubmit={submitHandler}>
- forms
+ 
         <h2>Login</h2>
 
         
@@ -50,7 +54,7 @@ return(
          </div>
      <ul>
         <li>
-        <Link to='/register'>Sign Up</Link>
+        <Link to='/register'>Create an account?</Link>
         </li>
     </ul>
     </form>
