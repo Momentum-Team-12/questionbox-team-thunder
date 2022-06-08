@@ -29,31 +29,5 @@ function QandA() {
     </>
   );
 }
-
-
-function QandA (){
-    let { id } = useParams();
-    const [question, setQuestion] = useState(null);
-
-    useEffect(() => {
-        axios
-        .get(
-            `https://questionbox-team-thunder-api.herokuapp.com/api/questions/${id}`
-        )
-        .then((res) => {
-            console.log(res);
-            setQuestion(res.data);
-        });
-    }, []);
-   
-
-return (
-    <>
-    {question && <Question {...question} />}
-    <Answer />
-    <AnswerInput />
-    </>
-    );
-    }
-    
+ 
 export default QandA;
