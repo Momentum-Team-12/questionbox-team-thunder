@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import classes from "./QuestionList.module.css";
 import axios from "axios";
-import Card from './Card';
+
 
 
 function QuestionList(props) {
@@ -28,7 +28,6 @@ function QuestionList(props) {
   },[]);
 
   return (
-    <Card>
     <div className={classes.list}>
       <h2 className={classes.header}>All Questions</h2>
       {questions && questions.map((question) => (
@@ -42,7 +41,7 @@ function QuestionList(props) {
       ))}
     
     </div>
-    </Card>
+    
   );
 }
 

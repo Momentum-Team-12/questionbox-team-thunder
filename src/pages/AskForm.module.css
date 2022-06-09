@@ -1,6 +1,7 @@
 .form {
     padding: 2rem;
     border: solid 3px rgb(18, 27, 40);
+    border-radius: 4px;
    
 }
 .control {
