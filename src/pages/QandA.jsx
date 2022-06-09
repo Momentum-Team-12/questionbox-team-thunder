@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Question from "../components/Question";
+import QuestionDetail from "../components/QuestionDetail";
 import Answer from "../components/Answer";
 import AnswerInput from "../components/AnswerInput";
 
@@ -23,7 +23,7 @@ function QandA() {
 
   return (
     <>
-      {question && <Question {...question} />}
+      {question && <QuestionDetail {...question} />}
       {question && question.answers.length > 0 && question.answers.map((answerId) => <Answer id={answerId} />)}
     <AnswerInput />
     </>
