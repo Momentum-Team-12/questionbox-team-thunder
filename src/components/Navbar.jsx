@@ -16,9 +16,11 @@ const Navbar = ({ handleLogout, isLoggedIn }) => {
               <Link to="/login">Login/Sign up</Link>
             </li>
           ) : (
+            <li>
             <Link to="/" onClick={handleLogout}>
               Logout
             </Link>
+            </li>
           )}
           <li>
             <Link to="/ask">Ask</Link>
