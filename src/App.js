@@ -39,7 +39,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/ask" element={<Ask />} />
+        <Route path="/ask" element={<Ask isLoggedIn={isLoggedIn} />} />
         <Route
           path="/login"
           element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}
