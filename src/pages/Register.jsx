@@ -25,10 +25,8 @@ function Register() {
       )
       .then((res) => {
         console.log(res);
+      })
       });
-      
-  }
-
   return (
     <form onSubmit={submitHandler}>
     <h2>Create an Account</h2>

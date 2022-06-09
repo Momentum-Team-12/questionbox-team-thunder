@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './Navbar.module.css';
+import SearchBar from './Search';
 
 const Navbar = ({ handleLogout, isLoggedIn}) => {
     
@@ -21,6 +22,9 @@ const Navbar = ({ handleLogout, isLoggedIn}) => {
                         }
                         <li>
                             <Link to='/ask'>Ask</Link>
+                        </li>
+                        <li>
+                            <SearchBar />
                         </li>
                     </ul>
                 </nav>
