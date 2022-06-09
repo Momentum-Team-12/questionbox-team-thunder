@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
-
+import { Navigate, Link } from "react-router-dom";
 import classes from "./Login.module.css";
 import axios from "axios";
 
@@ -32,13 +31,12 @@ function Login({ setAuth, isLoggedIn }) {
     return <Navigate to="/" replace={true} />;
   }
   return (
-    
-      <div className={classes.control}>
-          <h2>Log In</h2>
+    <div className={classes.control}>
+      <h2>Log In</h2>
       {error && <div className="error">{error}</div>}
       <form onSubmit={handleLogin}>
-      <div className={classes.control}>
-      <label htmlFor="username">Username </label>
+        <div className={classes.control}>
+          <label htmlFor="username">Username </label>
           <div className={classes.control}>
             <input
               type="text"
@@ -68,8 +66,12 @@ function Login({ setAuth, isLoggedIn }) {
         </div>
         <div className={classes.actions}>
           <button>Submit</button>
-
         </div>
+        <ul>
+          <li>
+            <Link to="/register">Need to create an account?</Link>
+          </li>
+        </ul>
       </form>
     </div>
   );

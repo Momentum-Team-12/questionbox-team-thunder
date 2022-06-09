@@ -6,6 +6,7 @@ import Ask from "./pages/Ask";
 import Layout from "./components/Layout";
 import QandA from "./pages/QandA";
 import Register from "./pages/Register";
+import Logout from "./pages/Logout";
 import axios from "axios";
 
 function App() {
@@ -30,7 +31,6 @@ function App() {
         }
       )
       .then((res) => {
-        // since the token has been destroyed on the server, we can remove it from state
         setAuth("", "");
       });
   };
