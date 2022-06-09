@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import axios from 'axios';
 import classes from './AskForm.module.css';
 

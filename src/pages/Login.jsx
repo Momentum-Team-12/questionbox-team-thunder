@@ -48,7 +48,7 @@ function Login({ setAuth, isLoggedIn }) {
             />
           </div>
         </div>
-
+          
         <div className={classes.control}>
           <label className="label" htmlFor="password">
             Password
@@ -75,6 +75,9 @@ function Login({ setAuth, isLoggedIn }) {
       </form>
     </div>
   );
+
 }
 
 export default Login;
+
+
