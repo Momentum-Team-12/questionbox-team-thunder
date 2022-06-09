@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Login.module.css';
+import axios from "axios";
 
 
 
@@ -18,7 +19,14 @@ function Login (props) {
             username: enteredUsername,
             password: enteredPassword,
         }
-        props.onAddLogin(loginData); 
+        axios
+        .post(
+          "https://questionbox-team-thunder-api.herokuapp.com/api/auth/token/login/",
+          loginData
+        )
+        .then((res) => {
+          console.log(res);
+        });  
 
         
     }
