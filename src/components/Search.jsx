@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import classes from "./Search.module.css";
 
-const SearchBar = ({ token, searchQuery, setSearchQuery }) => {
+const SearchBar = ({ searchQuery }) => {
   const onSubmit = (event) => {
     Navigate.push(`?s=${searchQuery}`);
     event.preventDefault();
