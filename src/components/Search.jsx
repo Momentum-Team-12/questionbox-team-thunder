@@ -1,15 +1,18 @@
 import { Navigate, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 import classes from './Search.module.css'
+import { useEffect } from 'react'
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useSearchParams()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    let formData = new FormData(event.currentTarget)
-    let searchTerm = formData.get('search')
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const searchTerm = formData.get('search')
     setSearchQuery({ search: searchTerm })
+    form.reset()
   }
 
   return (
