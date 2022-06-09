@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import classes from "./Login.module.css";
 
+
 export const Logout = ({ setAuth, setToken, setUsername, isLoggedIn }) => {
   const setLogout = () => {
     setUsername("");
