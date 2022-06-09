@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios'
 import classes from './AnswerInput.module.css';
 
@@ -25,7 +26,7 @@ function AnswerInput(props) {
         console.log(res);
       })
   }
-  return (
+  return props.isLoggedIn ? (
     <form className="form" onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor="answer">Add an Answer </label>
@@ -35,7 +36,7 @@ function AnswerInput(props) {
         <button>Submit</button>
       </div>
     </form>
-  );
+  ): (<Link to="/register">Want to provide an answer? Please create an account.</Link>) 
 }
 
 export default AnswerInput;

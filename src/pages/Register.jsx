@@ -76,7 +76,7 @@ const Register = ({ isLoggedIn, setRegisterSuccess, registerSuccess }) => {
         </div>
         <ul>
           <li>
-            <Link to="/login">Have an account? Login</Link>
+            <Link to="/login">Have an account? Please login</Link>
           </li>
         </ul>
       </form>

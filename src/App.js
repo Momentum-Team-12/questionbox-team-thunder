@@ -39,7 +39,7 @@ const App = () => {
     <Layout isLoggedIn={isLoggedIn} handleLogout={handleLogout} token={token}>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/ask" element={<Ask />} />
+        <Route path="/ask" element={<Ask isLoggedIn={isLoggedIn} token={token} />} />
         <Route
           path="/login"
           element={<Login setAuth={setAuth} isLoggedIn={isLoggedIn} />}
