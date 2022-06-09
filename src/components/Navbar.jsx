@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import classes from './Navbar.module.css';
 import SearchBar from './Search';
@@ -31,5 +32,4 @@ const Navbar = ({ handleLogout, isLoggedIn}) => {
         </header>
     )
 }
-
 export default Navbar;
