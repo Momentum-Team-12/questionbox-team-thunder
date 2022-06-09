@@ -6,10 +6,9 @@ import Ask from "./pages/Ask";
 import Layout from "./components/Layout";
 import QandA from "./pages/QandA";
 import Register from "./pages/Register";
-import Logout from "./pages/Logout";
 import axios from "axios";
 
-function App() {
+const App = () => {
   const [token, setToken] = useLocalStorageState("reactLibraryToken", "");
   const [username, setUsername] = useLocalStorageState(
     "reactLibraryUsername",
@@ -25,7 +24,8 @@ function App() {
   const handleLogout = () => {
     axios
       .post(
-        "https://questionbox-team-thunder-api.herokuapp.com/api//auth/token/logout/",
+        "https://questionbox-team-thunder-api.herokuapp.com/api/auth/token/logout/",
+        {},
         {
           headers: { Authorization: `token ${token}` },
         }
@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <Layout>
+    <Layout isLoggedIn={isLoggedIn} handleLogout={handleLogout} token={token}>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/ask" element={<Ask isLoggedIn={isLoggedIn} token={token} />} />
@@ -49,6 +49,6 @@ function App() {
       </Routes>
     </Layout>
   );
-}
+};
 
 export default App;
