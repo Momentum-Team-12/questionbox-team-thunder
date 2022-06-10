@@ -1,14 +1,14 @@
-// function Favorite (){
+function Favorite (){
    
 
-// return (
+return (
 
     
     
     
-// )
-// }
+)
+}
 
 
 
-// export default Favorite;
+export default Favorite;

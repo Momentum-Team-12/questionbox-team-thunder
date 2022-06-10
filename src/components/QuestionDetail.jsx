@@ -16,9 +16,6 @@ const QuestionDetail = (props) => {
         <h4>Author: {props.author}</h4>
         <h5>Posted: {props.created_at}</h5>
         </div>
-        <div className={classes.actions}>
-            <button>Add as Favorite</button>
-        </div>
         </Card>
     )
 }

@@ -21,6 +21,9 @@ const Answer = (props) => {
           <p>{answer.description}</p>
           <p>Creator: {answer.author}</p>
           <p>Posted: {answer.created_at}</p>
+          <div>
+            <button>Add as Favorite</button>
+        </div>
         </div>
   ) : '';
 };
