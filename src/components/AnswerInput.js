@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from 'axios'
 import classes from './AnswerInput.module.css';
 
@@ -12,12 +11,12 @@ function AnswerInput(props) {
 
       axios
       .post(
-        "https://questionbox-team-thunder-api.herokuapp.com/api/answers/",
+        "https://questionbox-team-thunder-api.herokuapp.com/api/questions/${props.id/answers/",
           {
               "description": enteredDescription
           },
          {
-          headers: { auth_token : `Token ${props.token}` },
+          headers: { Authorization : `Token ${props.token}` },
         }
       )
       .then((res) => {

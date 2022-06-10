@@ -15,10 +15,8 @@ RanDOM Thunder features the following:
 
 
 * React router is utilized for routing multiple URLs:
-  * Login and registration each have a URL.
-  * Questions have their own route.
-  * Route for user's answers and user's questions.
-  * Route for asking a question.
+  * Homepage, login and register have their own routes.
+  * There is a route for asking a question.
   * If implementing pagination, you will likely use routes to implement this.
 
 ### Future Features
