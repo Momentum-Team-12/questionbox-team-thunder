@@ -1,6 +1,6 @@
 # Welcome!
 
-This application "RanDOM Thunder QuestionBox, is a question and answer platform similar to Stack Overflow. Logged-in users can ask and answer questions. Users without an account are prompted to create a username and password. Logged-in users can also answer a question. RanDOM Thunder is a React application that sends AJAX requests to the QuestionBox API. The application utilizes React Router and was custom styled with simplicity in mind. The QuestionBox API was created by developer Gerardo Ayes and Manny Dador.
+This application "RanDOM Thunder QuestionBox", is a question and answer platform similar to Stack Overflow. Logged-in users can ask and answer questions. Users without an account are prompted to create a username and password. Logged-in users can also answer a question. RanDOM Thunder is a React application that sends AJAX requests to the QuestionBox API. The application utilizes React Router and was custom styled with simplicity in mind. The QuestionBox API was created by developer Gerardo Ayes and Manny Dador.
 
 ### Features
 
@@ -22,6 +22,7 @@ RanDOM Thunder features the following:
 ### Future Features
 In the future, we plan to implement the following: 
 * A user can delete their own question.
+* A user can answer a question.
 * Authenticated users can favorite or un-favorite a question or answer they like.
 
 ### To Use:
