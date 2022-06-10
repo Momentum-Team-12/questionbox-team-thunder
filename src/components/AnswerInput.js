@@ -1,42 +1,50 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import classes from './AnswerInput.module.css';
 
 function AnswerInput(props) {
-  const titleInputRef = useRef();
-  const answerInputRef = useRef();
+  const [enteredDescription, setEnteredDescription] = useState('')
+  console.log("Answer",props)
 
-  function submitHandler(event) {
-    event.preventDefault();
+  function submitHandler(event){
+      event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
-    const enteredAnswer = answerInputRef.current.value;
-
-    const answerData = {
-      title: enteredTitle,
-      description: enteredAnswer,
-    };
-    axios
+      axios
       .post(
-        "https://questionbox-team-thunder-api.herokuapp.com/api/answers/", 
-        answerData 
+        "https://questionbox-team-thunder-api.herokuapp.com/api/answers/",
+          {
+              "description": enteredDescription
+          },
+         {
+          headers: { auth_token : `Token ${props.token}` },
+        }
       )
       .then((res) => {
         console.log(res);
-      })
+        
+      });
   }
-  return props.isLoggedIn ? (
+  const handleChange = (inputType, event) => {
+      if (inputType === 'description') {
+          setEnteredDescription(event.target.value);
+      }
+  }
+
+  return (
     <form className="form" onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor="answer">Add an Answer </label>
-        <textarea id="answer" required rows="6" ref={answerInputRef}></textarea>
+        <textarea 
+        id="answer" 
+        required rows="6" 
+        onChange={(e) => handleChange('description', e)}></textarea>
       </div>
       <div className={classes.actions}>
         <button>Submit</button>
       </div>
     </form>
-  ): (<Link to="/register">Want to provide an answer? Please create an account.</Link>) 
+  )  
 }
 
 export default AnswerInput;

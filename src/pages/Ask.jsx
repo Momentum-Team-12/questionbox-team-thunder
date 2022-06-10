@@ -6,7 +6,7 @@ import classes from './AskForm.module.css';
 function Ask(props){
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredDescription, setEnteredDescription] = useState('')
-    console.log(props)
+    console.log("Ask",props)
 
     function submitHandler(event){
         event.preventDefault();
@@ -14,13 +14,12 @@ function Ask(props){
         axios
         .post(
           "https://questionbox-team-thunder-api.herokuapp.com/api/questions/",
-          
             {
                 "title": enteredTitle,
                 "description": enteredDescription
             },
            {
-            headers: { Authorization: `token ${props.token}` },
+            headers: { Authorization: `Token ${props.token}` },
           }
         )
         .then((res) => {
