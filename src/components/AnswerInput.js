@@ -4,14 +4,14 @@ import classes from './AnswerInput.module.css';
 
 function AnswerInput(props) {
   const [enteredDescription, setEnteredDescription] = useState('')
-  console.log("Answer",props)
+  
 
   function submitHandler(event){
       event.preventDefault();
 
       axios
       .post(
-        "https://questionbox-team-thunder-api.herokuapp.com/api/questions/${props.id/answers/",
+        `https://questionbox-team-thunder-api.herokuapp.com/api/questions/${props.id}/answers/`,
           {
               "description": enteredDescription
           },
