@@ -19,7 +19,7 @@ function QuestionList(props) {
 
   return (
     <div className={classes.list}>
-      {questions &&
+      {questions.length > 0 ?
         questions.map((question) => (
           <Question
             id={question.id}
@@ -28,7 +28,10 @@ function QuestionList(props) {
             created_at={question.created_at}
             key={question.id}
           />
-        ))}
+        ))
+      :
+      <h3>No results found</h3>
+      }
 
       <Link to="/">Home</Link>
     </div>
