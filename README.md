@@ -10,7 +10,7 @@ RanDOM Thunder features the following:
 * Unauthenticated users see a polite CTA to register.
 * All parties have the capability to search for a question.
 * Users can log in and are directed to the homepage.
-* Authenticated users can ask a question or provide an answer.
+* Authenticated users can ask a question.
 * A question cannot be edited.
 
 
@@ -27,6 +27,6 @@ In the future, we plan to implement the following:
 
 ### To Use:
 The app is currently deployed on Netlify: 
-
+https://62a2c2027fde1e573a55f357--spontaneous-cascaron-c7e262.netlify.app/
 
 . Please go to the site, register a new user, log in and ask a RanDOM Thunderous Question!
