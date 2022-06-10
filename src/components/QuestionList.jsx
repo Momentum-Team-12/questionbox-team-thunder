@@ -19,7 +19,6 @@ function QuestionList(props) {
 
   return (
     <div className={classes.list}>
-      <h2 className={classes.header}>All Questions</h2>
       {questions &&
         questions.map((question) => (
           <Question
@@ -31,7 +30,7 @@ function QuestionList(props) {
           />
         ))}
 
-    <Link to="/">Home</Link>
+      <Link to="/">Home</Link>
     </div>
   );
 }

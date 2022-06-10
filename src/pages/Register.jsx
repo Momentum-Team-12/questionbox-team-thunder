@@ -29,7 +29,9 @@ const Register = ({ isLoggedIn, setRegisterSuccess, registerSuccess }) => {
         setRegisterSuccess(true);
         console.log(isRegistered);
       })
-      .catch((e) => setError(e.message));
+      .catch((e) => {
+        setError(e.response.data.password[0]);
+      });
   };
 
   if (isRegistered) {
